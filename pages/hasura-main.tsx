@@ -7,8 +7,13 @@ import { Layout } from '../components/Layout'
 
 const FetchMain: FC = () => {
   const { data, error, loading } = useQuery<GetUsersQuery>(GET_USERS, {
-    fetchPolicy: 'network-only',
+    // fetchPolicy: 'cache-first', // デフォルトはこれ。キャッシュがあればそれを取得し、なければサーバーから取得しに行く。頻繁に更新されるものはあまり良くない
+    // fetchPolicy: 'network-only', // 常にサーバーから取得してくる。キャッシュにはデータを保存するので頻繁にデータが更新されたり、リアルタイムにデータを更新したい時はこれが良い
+    fetchPolicy: 'cache-and-network', // 大体これが推奨！ 常にサーバーサイドから取得してくるが、キャッシュが存在すれば最初にそれを表示しておく。サーバーから取得が終わったらデータがそれで更新される。注意としてはキャッシュがあってもなくても loading フラグは true になっちゃうので、loading で表示を切り分けていると意味がなくなるかもしれない。loading && data とかにするといいかも
+    // fetchPolicy: 'no-cache', // サーバーから取得してくるがキャッシュに保存しない。axiosとかでデータを取得してくるのと同じイメージ。キャッシュがあったとしてももちろん使わない
   })
+
+  console.log(data)
 
   if (loading) {
     return (
@@ -25,8 +30,6 @@ const FetchMain: FC = () => {
       </Layout>
     )
   }
-
-  console.log(data)
 
   return (
     <Layout title="Hasura fetchPolicy">
