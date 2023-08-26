@@ -17,7 +17,7 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined', // windowがないのはサーバー側の時
     link: new HttpLink({
-      uri: 'https://creative-woodcock-50.hasura.app/v1/graphql', // hasuraのコンソールから持ってくる
+      uri: process.env.NEXT_PUBLIC_HASURA_URL, // hasuraのコンソールから持ってくる
       headers: {
         'x-hasura-admin-secret': process.env.NEXT_PUBLIC_HASURA_KEY,
       },
