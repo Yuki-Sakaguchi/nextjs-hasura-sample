@@ -35,6 +35,9 @@
   - https://github.com/Yuki-Sakaguchi/nextjs-hasura-sample/commit/b28fa270b09d23a92e91b9c755c4174a7b184305
  
 ## 学びたいこと
+- セキュリティ周り
+  - エンドポイントのアクセス制限
+  - 認証ありでの書き込み制限
 - DB を Supabase にしたい（上記は NEON）
 - Supabase の Auth も使って、サーバーサイドでログインしているかどうかによって処理を分けたい
 - ステージングと本番の作り方
