@@ -25,10 +25,10 @@
   },
   "devDependencies": {
     "@babel/core": "7.17.9",
-    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/cli": "1.21.3",
     "@graphql-codegen/typescript": "^1.21.1",
-    "@graphql-codegen/typescript-operations": "4.0.1",
-    "@graphql-codegen/typescript-react-apollo": "3.3.7",
+    "@graphql-codegen/typescript-operations": "1.17.15",
+    "@graphql-codegen/typescript-react-apollo": "2.2.3",
     "@testing-library/dom": "7.30.3",
     "@testing-library/jest-dom": "5.11.10",
     "@testing-library/react": "11.2.6",
